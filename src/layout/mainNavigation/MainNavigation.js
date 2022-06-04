@@ -1,41 +1,34 @@
-import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "../../utils/constants";
-
-
+import {useScroll} from "../../hooks/useScroll"
 import styles from "./MainNavigation.module.css";
 
 export default function MainNavigation({ setPage }) {
+
+    const {scrollDirection, scrollPosition} = useScroll();
    
-
-  
-
-
-
-
-
     return (
-        <header className={styles.header} data-test="navigation-header">
-            <div className={styles.logo}>React Meetups</div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#" onClick={() => setPage(ALL_MEETUP_PAGE)}>
-                            All Meetups
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" onClick={() => setPage(NEW_MEETUP_PAGE)}>
-                            Add New Meetup
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" onClick={() => setPage(FAVORITES_PAGE)}>
-                            My Favorites
+        <header
+            className={scrollDirection === "down" && scrollDirection !== null && scrollPosition > 250 ? `${styles.header} ${styles.hide}` : styles.header}
+            //style={scrollDirection === "down" && scrollDirection !== null && scrollPosition > 250 ? {opacity : "0", transition: "opacity .3s ease"} : {position: "fixed", top: "0", opacity : "1"} }
+           
+            data-test="navigation-header">
+            <div className={`${styles['header-wrapper']}`}>
+                <div className={styles.logo}>React Meetups</div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" >All Meetups</a>
+                        </li>
+                        <li>
+                            <a href="#" > Add New Meetup</a>
+                        </li>
+                        <li>
+                            <a href="#">  My Favorites
                             <span className={styles.badge}>{0}</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
+        </header >
     );
 }
