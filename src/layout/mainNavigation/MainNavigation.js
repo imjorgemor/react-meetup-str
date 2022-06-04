@@ -4,6 +4,7 @@ import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "../../utils/co
 import styles from "./MainNavigation.module.css";
 
 export default function MainNavigation({ setPage }) {
+   
 
   
 
