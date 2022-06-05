@@ -1,19 +1,18 @@
-import { useFetch } from "./../../hooks/useFetch";
 import classes from "./MeetupItem.module.css";
 import Card from "../card/Card";
 
 export default function MeetupItem() {
-    const { data } = useFetch({
-        url: "/data.json",
-    });
+    // const { data } = useFetch({
+    //     url: "/data.json",
+    // });
 
-    if (!data) return <p>Loading...</p>;
-    let [item] = data;
+    // if (!data) return <p>Loading...</p>;
+    // let [item] = data;
 
     return (
         <li className={classes.item} data-test='meet-up-item'>
             <Card>
-                <div className={classes.image}>
+                {/* <div className={classes.image}>
                     <img src={item.image} alt={item.title} />
                 </div>
                 <div className={classes.content}>
@@ -23,7 +22,7 @@ export default function MeetupItem() {
                 </div>
                 <div className={classes.actions}>
                     <button>Add to favorites</button>
-                </div>
+                </div> */}
             </Card>
         </li>
     );
