@@ -9,7 +9,8 @@ export function AllMeetups() {
     const { meetups, isLoading } = useSelector(state => state.meetups);
 
     useEffect(() => {
-        if (meetups.length === 0 ) {dispatch(getMeetups());}
+        //use RTK QUERY for query improvement performance
+        dispatch(getMeetups());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
