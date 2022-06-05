@@ -1,8 +1,16 @@
 import styles from "./MeetupItem.module.css";
 import Card from "../card/Card";
+import { useDispatch } from "react-redux";
+import { setFavorite } from "../../store/slices/meetupSlice";
 
 export default function MeetupItem({meetup}) {
-    
+
+    const dispatch = useDispatch();
+
+    const addFavorite = (meetup) => {
+        dispatch(setFavorite(meetup));
+    }
+
     return (
         <li className={styles.item} data-test='meet-up-item'>
             <Card>
@@ -15,7 +23,7 @@ export default function MeetupItem({meetup}) {
                     <p>{meetup.description}</p>
                 </div>
                 <div className={styles.actions}>
-                    <button>Add to favorites</button>
+                    <button onClick={()=>addFavorite(meetup)}>Add to favorites</button>
                 </div>
             </Card>
         </li>

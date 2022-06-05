@@ -1,9 +1,11 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll"
 import styles from "./MainNavigation.module.css";
 
 export default function MainNavigation() {
     const { scrollDirection, scrollPosition } = useScroll();
+    const { favorites } = useSelector(state => state.meetups)
 
     return (
         <header
@@ -34,7 +36,7 @@ export default function MainNavigation() {
                                 to="/favorites"
                                 className={({ isActive }) => isActive ? `${styles['navlink-active']}` : styles.navlink}
                             >
-                                My Favorites  <span className={styles.badge}>{0}</span>
+                                My Favorites  <span className={styles.badge}>{favorites.length}</span>
                             </NavLink>
                         </li>
                     </ul>

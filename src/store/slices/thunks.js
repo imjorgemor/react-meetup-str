@@ -8,6 +8,6 @@ export const getMeetups = () => {
         const resp = await fetch("/data.json");
         const data = await resp.json();
         
-        dispatch(setMeetups({meetups: data}))
+        dispatch(setMeetups({meetups: data}));
     }
 }
