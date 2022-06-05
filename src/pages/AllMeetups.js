@@ -1,19 +1,28 @@
-import MeetupItem from "../components/meetups/MeetupItem";
-import classes from "./../components/meetups/MeetupList.module.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { MeetupList } from "../components/meetupList/MeetupList";
+import { getMeetups } from "../store/slices/thunks";
 
 
 export function AllMeetups() {
-  return (
-    <section>
-      <h1>All Meetups</h1>
-      <ul className={classes.list}>
-        <MeetupItem />
-        <MeetupItem />
-        <MeetupItem />
-        <MeetupItem />
-      </ul>
-    </section>
-  );
+    const dispatch = useDispatch();
+    const { meetups, isLoading } = useSelector(state => state.meetups);
+
+    useEffect(() => {
+        if (meetups.length === 0 ) {dispatch(getMeetups());}
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    return (
+        <section>
+            <h1>All Meetups</h1>
+            {
+                isLoading
+                    ? <h4>loading...</h4>
+                    : <MeetupList meetups={meetups} />
+            }
+        </section>
+    );
 }
 
 export default AllMeetups;

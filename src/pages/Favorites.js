@@ -1,9 +1,16 @@
+import { useSelector } from "react-redux";
+import {MeetupList} from "../components/meetupList/MeetupList"
+
+
 export function Favorites() {
-  return (
-    <section>
-      <h1>Favorites Page</h1>
-    </section>
-  );
+    const { favorites } = useSelector(state => state.meetups)
+
+    return (
+        <section>
+            <h1>All Meetups</h1>
+            <MeetupList meetups={favorites} />
+        </section>
+    );
 }
 
 export default Favorites;

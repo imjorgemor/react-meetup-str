@@ -1,5 +1,5 @@
-import classes from "./Card.module.css";
+import styles from "./Card.module.css";
 
 export default function Card({ children }) {
-  return <div className={classes.card}>{children}</div>;
+  return <div className={styles.card}>{children}</div>;
 }
