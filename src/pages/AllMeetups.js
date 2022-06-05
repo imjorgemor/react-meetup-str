@@ -4,12 +4,9 @@ import { MeetupList } from "../components/meetupList/MeetupList";
 import { getMeetups } from "../store/slices/thunks";
 
 
-
 export function AllMeetups() {
-
     const dispatch = useDispatch();
-    const { meetups, isLoading } = useSelector(state => state.meetups)
-    console.log(meetups)
+    const { meetups, isLoading } = useSelector(state => state.meetups);
 
     useEffect(() => {
         if (meetups.length === 0 ) {dispatch(getMeetups());}

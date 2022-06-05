@@ -15,12 +15,16 @@ export const meetupSlice = createSlice({
             state.isLoading = false;
             state.meetups = action.payload.meetups
         },
-        setFavorite: (state, action) => {
+        addFavorite: (state, action) => {
             state.favorites = [...state.favorites, action.payload]    
+        },
+        removeFavorite: (state, action) => {
+            state.favorites = state.favorites.filter(favorite => favorite.id !== action.payload)
+
         }
     },
 });
 
 
 // Action creators are generated for each case reducer function
-export const { startLoadingMeetups, setMeetups, setFavorite } = meetupSlice.actions;
+export const { startLoadingMeetups, setMeetups, addFavorite, removeFavorite } = meetupSlice.actions;
