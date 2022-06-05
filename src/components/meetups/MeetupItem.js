@@ -1,28 +1,22 @@
-import classes from "./MeetupItem.module.css";
+import styles from "./MeetupItem.module.css";
 import Card from "../card/Card";
 
-export default function MeetupItem() {
-    // const { data } = useFetch({
-    //     url: "/data.json",
-    // });
-
-    // if (!data) return <p>Loading...</p>;
-    // let [item] = data;
-
+export default function MeetupItem({meetup}) {
+    
     return (
-        <li className={classes.item} data-test='meet-up-item'>
+        <li className={styles.item} data-test='meet-up-item'>
             <Card>
-                {/* <div className={classes.image}>
-                    <img src={item.image} alt={item.title} />
+                <div className={styles.image}>
+                    <img src={meetup.image} alt={meetup.title} />
                 </div>
-                <div className={classes.content}>
-                    <h3>{item.title}</h3>
-                    <address>{item.address}</address>
-                    <p>{item.description}</p>
+                <div className={styles.content}>
+                    <h3>{meetup.title}</h3>
+                    <address>{meetup.address}</address>
+                    <p>{meetup.description}</p>
                 </div>
-                <div className={classes.actions}>
+                <div className={styles.actions}>
                     <button>Add to favorites</button>
-                </div> */}
+                </div>
             </Card>
         </li>
     );

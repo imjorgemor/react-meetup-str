@@ -1,4 +1,4 @@
-import NewMeetupForm from "../components/meetups/NewMeetupForm";
+import NewMeetupForm from "../components/newMeetupForm/NewMeetupForm";
 
 export function NewMeetup() {
   return (
