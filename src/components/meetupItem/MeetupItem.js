@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/slices/meetupSlice";
 
 
-export default function MeetupItem({meetup}) {
+export default function MeetupItem({ meetup }) {
 
     const dispatch = useDispatch();
     const { favorites } = useSelector(state => state.meetups);
 
     const isFav = favorites.some(fav => fav.id === meetup.id);
- 
+
     const toggleFavorite = (meetup) => {
-        if (!isFav) {dispatch(addFavorite(meetup))}
-        if (isFav) {dispatch(removeFavorite(meetup.id))}
+        if (!isFav) { dispatch(addFavorite(meetup)) }
+        if (isFav) { dispatch(removeFavorite(meetup.id)) }
     }
 
     return (
@@ -28,7 +28,7 @@ export default function MeetupItem({meetup}) {
                     <p>{meetup.description}</p>
                 </div>
                 <div className={styles.actions}>
-                    <button onClick={()=>toggleFavorite(meetup)}>{!isFav? "Add to favorites": "Remove to favorites"}</button>
+                    <button onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove to favorites"}</button>
                 </div>
             </Card>
         </li>

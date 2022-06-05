@@ -32,7 +32,7 @@ export default function MainNavigation() {
                             </NavLink>
                         </li>
                         <li>
-                        <NavLink
+                            <NavLink
                                 to="/favorites"
                                 className={({ isActive }) => isActive ? `${styles['navlink-active']}` : styles.navlink}
                             >
