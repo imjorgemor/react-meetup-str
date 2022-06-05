@@ -1,11 +1,11 @@
-import styles from "./MeetupItem.module.css";
 import Card from "../card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/slices/meetupSlice";
+import PropTypes from "prop-types";
+import styles from "./MeetupItem.module.css";
 
 
 export default function MeetupItem({ meetup }) {
-
     const dispatch = useDispatch();
     const { favorites } = useSelector(state => state.meetups);
 
@@ -28,9 +28,13 @@ export default function MeetupItem({ meetup }) {
                     <p>{meetup.description}</p>
                 </div>
                 <div className={styles.actions}>
-                    <button onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove to favorites"}</button>
+                    <button onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove from favorites"}</button>
                 </div>
             </Card>
         </li>
     );
+}
+
+MeetupItem.propTypes = {
+    meetup: PropTypes.object.isRequired
 }
