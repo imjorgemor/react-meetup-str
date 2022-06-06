@@ -69,7 +69,6 @@ You may also see any lint errors in the console.
 ### `npm run test`
 
 Launches the Playwright test runner in the interactive watch mode. Please note that the test will only run if the app is running in development mode.
-To see the test results on the browser run the following script.
-```sh
-npx playwright show-report
-```
+To see the test results on the browser run the following script:
+
+### `npx playwright show-report`
