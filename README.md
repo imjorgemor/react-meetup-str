@@ -8,7 +8,7 @@ The purpose of this project is develop a react single page application with the 
 * [Features](#features)
 * [Setup](#setup)
 * [Available scripts](#available-scripts)
-* [App preview](#app-preview)
+* [Contact](#contact)
 
 
 ## Built with
@@ -72,3 +72,10 @@ Launches the Playwright test runner in the interactive watch mode. Please note t
 To see the test results on the browser run the following script:
 
 ### `npx playwright show-report`
+
+
+## Contact
+
+[email me!](jorge-mor@outlook.es) 
+
+[Linkedin](https://www.linkedin.com/in/jorge-mor-reactdev/)
