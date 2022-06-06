@@ -1,71 +1,75 @@
-# Getting Started with Create React App
+# REACT MEETUPS APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Intro
+
+The purpose of this project is develop a react single page application with the latest libraries like Redux Toolkit(v.18.2) or Playwright as an end-2-end testing platform. It has been fun to learn these tools and use them in this project.
+
+* [Built With](#built-with)
+* [Features](#features)
+* [Setup](#setup)
+* [Available scripts](#available-scripts)
+* [App preview](#app-preview)
+
+
+## Built with
+
+This project has built with:
+* [Create React App](https://github.com/facebook/create-react-app) 
+* The New Redux Toolkit library to manage a global app state [ReduxToolKit](https://redux-toolkit.js.org/)
+* [Playwright](https://playwright.dev/) for end-2-end testing
+* CSS Modules for styling
+* [React-routerV6](https://reactrouter.com/docs/en/v6/getting-started/overview) for managing app routes.
+
+
+## Features
+
+### Add favorite meetup
+
+Each meetup card contains a button to add or remove from favorites. Once the button is clicked, the meetup is added to the MyFavorites page and the favorites counter is increased by one. After being added the text of the button changes to "Remove from favorites" and then on click it executes the inverse function described.
+
+For this purpose instead of using the react hook useContext I preferred to use the Redux Toolkit library to manage a global state accesible from any component/page of the application. This library simplifies all the boilerplate and store configuration while enables a precise control of the state and its actions.
+
+### Header show/hide on scroll
+
+For this feature I have developed the useScroll custom hook which return the position and direction of the scrollY. The header obtains these two states and show/hide according to ternary application of css module classes. 
+
+### Routing for SEO purposes
+
+All the appRoutes are configured in the following directory "src/router/AppRouter.js". Each page has their own route and if the user introduces a route that does not exist in the router it automatically redirects to the home page.
+
+### End2end testing with Playwright
+
+The react testing scenario right now is somehow confusing. While Jest was transferred on May 2022 to the OpenJS foundation and need a lot of external libraries to test custom hooks and reducers, Enzyme has no official adaptation or release from React v 17, end2end testing platforms has became more popular. To this regard, Microsoft has developed Playwright, a fun and easy library to test modern websites. 
+
+The tests run in this application cover mainly render tests and the main feature of adding and removing meetups to a favorite counter.
+
+
+## Setup
+
+Get a local copy up and run these following simple steps.
+```sh
+git clone https://github.com/imjorgemor/react-meetup-str.git
+```
+
+Install NPM packages
+```sh
+npm install
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-meetup-str
+Launches the Playwright test runner in the interactive watch mode. Please note that the test will only run if the app is running in development mode.
+To see the test results on the browser run the following script.
+```sh
+npx playwright show-report
+```
