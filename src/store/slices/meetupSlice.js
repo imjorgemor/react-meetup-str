@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const meetupSlice = createSlice({
     name: 'meetup',
     initialState: {
+        brandName: "meetup for str",
         meetups: [],
         isLoading: false,
         favorites: []
@@ -16,7 +17,7 @@ export const meetupSlice = createSlice({
             state.meetups = action.payload.meetups
         },
         addFavorite: (state, action) => {
-            state.favorites = [...state.favorites, action.payload]    
+            state.favorites = [...state.favorites, action.payload]
         },
         removeFavorite: (state, action) => {
             state.favorites = state.favorites.filter(favorite => favorite.id !== action.payload)

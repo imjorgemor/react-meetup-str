@@ -1,4 +1,5 @@
 import MeetupItem from "../meetupItem/MeetupItem"
+import PropTypes from "prop-types";
 import styles from "./MeetupList.module.css";
 
 export const MeetupList = ({ meetups }) => {
@@ -9,4 +10,8 @@ export const MeetupList = ({ meetups }) => {
             }
         </ul>
     )
+}
+
+MeetupList.propTypes = {
+    meetups: PropTypes.arrayOf(PropTypes.object)
 }
