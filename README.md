@@ -76,6 +76,6 @@ To see the test results on the browser run the following script:
 
 ## Contact
 
-[email me!](jorge-mor@outlook.es) 
+Email me at: jorge-mor@outlook.es 
 
-[Linkedin](https://www.linkedin.com/in/jorge-mor-reactdev/)
+Or visit my [Linkedin](https://www.linkedin.com/in/jorge-mor-reactdev/)
