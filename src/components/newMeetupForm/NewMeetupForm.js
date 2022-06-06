@@ -11,7 +11,7 @@ export default function NewMeetupForm() {
             <form className={styles.form} onSubmit={submitHandler}>
                 <div className={styles.control}>
                     <label htmlFor="title">Meetup Title</label>
-                    <input type="text" required id="title" />
+                    <input type="text" required id="title"  data-testid="title-input"/>
                 </div>
                 <div className={styles.control}>
                     <label htmlFor="image">Meetup Image</label>
@@ -26,7 +26,7 @@ export default function NewMeetupForm() {
                     <textarea id="description" required rows="5"></textarea>
                 </div>
                 <div className={styles.actions}>
-                    <button>Add Meetup</button>
+                    <button type="submit">Add Meetup</button>
                 </div>
             </form>
         </Card>

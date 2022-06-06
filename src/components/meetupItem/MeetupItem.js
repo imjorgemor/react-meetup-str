@@ -17,7 +17,7 @@ export default function MeetupItem({ meetup }) {
     }
 
     return (
-        <li className={styles.item} data-test='meet-up-item'>
+        <li className={styles.item} id='meet-up-item'>
             <Card>
                 <div className={styles.image}>
                     <img src={meetup.image} alt={meetup.title} />
@@ -28,7 +28,7 @@ export default function MeetupItem({ meetup }) {
                     <p>{meetup.description}</p>
                 </div>
                 <div className={styles.actions}>
-                    <button onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove from favorites"}</button>
+                    <button id="add-favorite" onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove from favorites"}</button>
                 </div>
             </Card>
         </li>
