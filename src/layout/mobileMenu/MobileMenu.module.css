@@ -1,13 +1,15 @@
 .mobile-navigation {
-    height: 100vh;
-    padding: 20px;
+    height: 350px;
+    padding: 25px 20px;
     width: 100vw;
-    background-color: white;
     z-index: 9;
-    position: absolute;
-    margin-top: 75px;
-    top: 0;
+    position: fixed;
+    bottom: 0;
     left: 0;
+    right: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: #fdebed;
 }
 
 .navlink {
@@ -57,7 +59,7 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 25px;
+    margin: 75px 25px;
     border: none;
     background-color: transparent;
     font-size: 14px;
