@@ -1,5 +1,7 @@
 # REACT MEETUPS APP
 
+![cover](https://github.com/imjorgemor/react-meetup-str/blob/main/public/GITHUB_COVER.png)
+
 ### Intro
 
 The purpose of this project is develop a react single page application with the latest libraries like Redux Toolkit(v.18.2) or Playwright as an end-2-end testing platform. It has been fun to learn these tools and use them in this project.
