@@ -1,0 +1,51 @@
+.hamburger {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+    transform: rotate(90deg);
+    top: 0;
+    left: 0;
+    margin: 25px;
+    display: none;
+    position: fixed;
+    cursor: pointer;
+}
+
+.burger {
+    width: 0.25rem;
+    border-radius: 10px;
+    background-color: #fc4d62;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 25px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fc4d62;
+    display: none;
+    opacity: 1;
+    z-index: 10;
+}
+
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex;
+    }
+    .logo {
+        position: fixed;
+        display: flex;
+        opacity: 1;
+        transition: all 0.3s linear;
+    }
+    .hide {
+        opacity: 0;
+        transition: all 0.3s linear;
+    }
+}

@@ -28,7 +28,11 @@ export default function MeetupItem({ meetup }) {
                     <p>{meetup.description}</p>
                 </div>
                 <div className={styles.actions}>
-                    <button id="add-favorite" onClick={() => toggleFavorite(meetup)}>{!isFav ? "Add to favorites" : "Remove from favorites"}</button>
+                    <button 
+                        id="add-favorite"
+                        onClick={() => toggleFavorite(meetup)}
+                        className={isFav ? styles.favorite: styles.normal}
+                        >{!isFav ? "Add to favorites" : "Remove from favorites"}</button>
                 </div>
             </Card>
         </li>

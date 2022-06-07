@@ -7,7 +7,7 @@ export function Favorites() {
 
     return (
         <section>
-            <h1>All Meetups</h1>
+            <h1>Favorite Meetups</h1>
             <MeetupList meetups={favorites} />
         </section>
     );

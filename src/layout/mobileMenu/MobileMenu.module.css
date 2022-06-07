@@ -1,0 +1,70 @@
+.mobile-navigation {
+    height: 100vh;
+    padding: 20px;
+    width: 100vw;
+    background-color: white;
+    z-index: 9;
+    position: absolute;
+    margin-top: 75px;
+    top: 0;
+    left: 0;
+}
+
+.navlink {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: grey;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navlink-active {
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navlink:hover {
+    color: black;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.li {
+    white-space: nowrap;
+}
+
+
+.close-button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 25px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+
