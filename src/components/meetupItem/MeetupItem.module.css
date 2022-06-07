@@ -1,46 +1,72 @@
 .item {
     margin: 1rem 0;
-  }
-  
-  .image {
+}
+
+.image {
     width: 100%;
     height: 20rem;
     overflow: hidden;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
-  }
-  
-  .image img {
+}
+
+.image img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
-  }
-  
-  .content {
-    text-align: center;
+}
+
+.content {
+    text-align: left;
     padding: 1rem;
-  }
-  
-  .content h3 {
+}
+
+.content h3 {
     font-size: 1.25rem;
     color: #2c292b;
-  }
-  
-  .actions {
+}
+
+.actions {
     padding: 1.5rem;
     text-align: center;
-  }
-  
-  .actions button {
+}
+
+.normal {
     font: inherit;
     cursor: pointer;
-    color: #77002e;
-    border: 1px solid #77002e;
-    background-color: transparent;
+    background-color: #fc4d62;
+    color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
-  }
-  
-  .actions button:hover,
-  .actions button:active {
-    background-color: #ffe2ed;
-  }
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 25px;
+}
+
+.favorite {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 25px;
+    background-color: white;
+    color: #fc4d62;
+    border: 1px solid #fc4d62;
+}
+
+.normal:hover,
+.normal:active {
+    background-color: white;
+    border: 1px solid #fc4d62;
+    color: #fc4d62;
+}

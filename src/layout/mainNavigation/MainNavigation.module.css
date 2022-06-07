@@ -1,11 +1,13 @@
 .header {
-    width: 100%;
+    width: 100vw;
     height: 5rem;
     display: flex;
-    background-color: #77002e;
     position: fixed;
     top: 0;
     transition: all 0.3s linear;
+    margin: 10px auto;
+    padding: 0px 10px;
+    z-index: 9;
 }
 
 .hide {
@@ -15,13 +17,18 @@
 }
 
 .header-wrapper {
-    max-width: 1200px;
+    min-width: fit-content;
+    max-width: 90%;
     padding: 10px 25px;
     height: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: #fc4d62;
+    border-radius: 12px;
+    position: relative;
+    
 }
 
 .hidden {
@@ -29,9 +36,10 @@
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: bold;
+    margin-right: 3rem;
 }
 
 .header ul {
@@ -40,33 +48,45 @@
     padding: 0;
     display: flex;
     align-items: baseline;
+    gap: 2rem;
 }
 
 .header li {
-    margin-left: 3rem;
+    white-space: nowrap  
 }
 
 .badge {
-    background-color: #cc2062;
-    color: white;
-    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    color: #fc4d62;
+    border-radius: 8px;
     padding: 0 1rem;
-    margin-left: 0.5rem;
+    margin: 5px;
 }
 
 .navlink {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #fcb8d2;
     transition: all ease 0.4s;
+    position: relative;
 }
 
 .navlink-active {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
 }
 
 .navlink:hover {
     color: white;
+}
+
+@media (max-width: 767px) {
+    .header {
+        display: none;
+
+    }
 }
